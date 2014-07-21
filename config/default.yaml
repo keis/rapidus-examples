@@ -1,0 +1,18 @@
+logging:
+  proxy: false
+
+  logger:
+    app:
+      level: DEBUG
+    app.other:
+      level: WARN
+
+  sinks:
+    - type: console
+      format:
+        type: 'rapidus-sparkle[createFormatter]'
+        format: '%{:levelName :time %{bold [:levelName]}} :name - :message'
+        colors:
+          DEBUG: cyan
+          WARNING: yellow
+          ERROR: red
