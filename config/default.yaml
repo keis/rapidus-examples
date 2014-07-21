@@ -4,6 +4,15 @@ logging:
   logger:
     access:
       type: 'rapidus-connect-logger'
+      sinks:
+        - type: file
+          path: 'access.log'
+          format:
+            type: 'rapidus-sparkle[createFormatter]'
+            format: '%{:levelName :time %{bold [:levelName]}} :name - :remoteAddress - ":method :url" - :status'
+            colors:
+              ERROR: red
+              INFO: green
     app:
       level: DEBUG
     app.other:
