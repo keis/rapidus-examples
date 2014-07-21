@@ -2,6 +2,8 @@ logging:
   proxy: false
 
   logger:
+    access:
+      type: 'rapidus-connect-logger'
     app:
       level: DEBUG
     app.other:
@@ -16,3 +18,4 @@ logging:
           DEBUG: cyan
           WARNING: yellow
           ERROR: red
+          INFO: green

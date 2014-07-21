@@ -1,9 +1,0 @@
-{
-  "logging": {
-    "sinks": [
-      {
-        "type": "console"
-      }
-    ]
-  }
-}
