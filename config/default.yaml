@@ -4,9 +4,14 @@ logging:
   logger:
     access:
       type: 'rapidus-connect-logger'
+      propagate: false
       sinks:
         - type: file
           path: 'access.log'
+          format:
+            type: 'rapidus-sparkle[createFormatter]'
+            format: ':time - :remoteAddress - ":method :url" - :status'
+        - type: console
           format:
             type: 'rapidus-sparkle[createFormatter]'
             format: '%{:levelName :time %{bold [:levelName]}} :name - :remoteAddress - ":method :url" - :status'

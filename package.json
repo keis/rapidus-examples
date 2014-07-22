@@ -10,8 +10,8 @@
     "config": "^0.4.36",
     "connect-continuation-id": "^0.1.0",
     "js-yaml": "^3.1.0",
-    "rapidus": "^0.1.3",
-    "rapidus-configure": "0.0.3",
+    "rapidus": "^0.1.4",
+    "rapidus-configure": "0.0.4",
     "rapidus-connect-logger": "0.0.3",
     "rapidus-sparkle": "0.0.4"
   },
