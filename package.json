@@ -9,6 +9,7 @@
   "dependencies": {
     "config": "^0.4.36",
     "connect-continuation-id": "^0.1.0",
+    "continuation-local-storage": "^3.0.0",
     "js-yaml": "^3.1.0",
     "rapidus": "^0.1.4",
     "rapidus-configure": "0.0.4",
