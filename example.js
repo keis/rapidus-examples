@@ -1,16 +1,14 @@
 var config = require('config'),
     logging = require('rapidus'),
     express = require('express'),
-    assignId = require('connect-continuation-id'),
-    createNamespace = require('continuation-local-storage').createNamespace,
-    logger = logging.getLogger('app'),
-    namespace = createNamespace('express-example'),
     cluster = require('cluster'),
+    continuationId = require('connect-continuation-id')(),
+    logger = logging.getLogger('app'),
     app = express();
 
 module.exports.requestId = function (config) {
     return function (record) {
-        record.requestId = namespace.get('continuationId');
+        record.requestId = continuationId.get();
     };
 }
 
@@ -19,7 +17,7 @@ require('rapidus-configure')(config.logging, null, module);
 function worker() {
     logger.info('worker online', process.pid);
 
-    app.use(assignId(namespace));
+    app.use(continuationId.assign);
     app.use(logging.getLogger('access').middleware);
 
     app.get('/test', function (req, res, next) {
