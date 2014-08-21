@@ -10,11 +10,11 @@ logging:
           path: 'access.log'
           format:
             type: 'rapidus-sparkle[createFormatter]'
-            format: ':time - :remoteAddress - ":method :url" - :status'
+            format: ':date :time - :remoteAddress - ":method :url" - :status'
         - type: console
           format:
             type: 'rapidus-sparkle[createFormatter]'
-            format: '%{:levelName :time :requestId %{bold [:levelName]}} :name - :remoteAddress - ":method :url" - :status'
+            format: '%{:levelName [:date :time] :requestId %{bold [:levelName]}} :name - :remoteAddress - ":method :url" - :status'
             colors:
               ERROR: red
               INFO: green
@@ -30,7 +30,7 @@ logging:
     - type: console
       format:
         type: 'rapidus-sparkle[createFormatter]'
-        format: '%{:levelName :time :requestId %{bold [:levelName]}} :name - :message'
+        format: '%{:levelName [:date :time] :requestId %{bold [:levelName]}} :name - :message'
         colors:
           DEBUG: cyan
           WARNING: yellow
