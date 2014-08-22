@@ -6,6 +6,8 @@ var config = require('config'),
     logger = logging.getLogger('app'),
     app = express();
 
+// Export to be used from the config as a processor with
+//   type: './example[requestId]'
 module.exports.requestId = function (config) {
     return function (record) {
         record.requestId = continuationId.get();
