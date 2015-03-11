@@ -6,15 +6,25 @@
     "type": "git",
     "url": "https://github.com/keis/rapidus-examples.git"
   },
+  "scripts": {
+    "billom": "billom package.json \"$npm_package_name\" > package.html",
+    "docs": "docco example.litcoffee",
+    "start": "coffee example.litcoffee"
+  },
   "dependencies": {
+    "coffee-script": "^1.9.1",
     "config": "^0.4.36",
     "connect-continuation-id": "^0.2.0",
     "continuation-local-storage": "^3.0.0",
+    "express": "^4.12.2",
     "js-yaml": "^3.1.0",
     "rapidus": "^0.2.0",
     "rapidus-configure": "0.1.0",
-    "rapidus-connect-logger": "0.1.1",
+    "rapidus-connect-logger": "0.1.2",
     "rapidus-sparkle": "0.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "billom": "^1.0.2",
+    "docco": "^0.7.0"
+  }
 }
