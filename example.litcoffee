@@ -17,6 +17,7 @@ components are used to the actual logging.
     logging = require 'rapidus'
     express = require 'express'
     cluster = require 'cluster'
+    accessLog = require 'rapidus-connect-logger'
     continuationId = require('connect-continuation-id')()
     logger = logging.getLogger 'app'
     app = express()
@@ -50,7 +51,7 @@ asynchronous work while logging some dummy messages.
         logger.info 'hello from worker', process.pid
 
         app.use continuationId.assign
-        app.use logging.getLogger('access').middleware
+        app.use accessLog 'access'
 
         app.get '/test', (req, res, next) ->
             logger.info 'processing request'

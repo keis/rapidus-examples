@@ -13,15 +13,14 @@
   },
   "dependencies": {
     "coffee-script": "^1.9.1",
-    "config": "^0.4.36",
+    "config": "^1.0.0",
     "connect-continuation-id": "^0.2.0",
-    "continuation-local-storage": "^3.0.0",
     "express": "^4.12.2",
     "js-yaml": "^3.1.0",
-    "rapidus": "^0.2.0",
-    "rapidus-configure": "0.1.0",
-    "rapidus-connect-logger": "0.1.2",
-    "rapidus-sparkle": "0.1.0"
+    "rapidus": "^0.3.0",
+    "rapidus-configure": "^0.1.0",
+    "rapidus-connect-logger": "^0.2.0",
+    "rapidus-sparkle": "^0.3.0"
   },
   "devDependencies": {
     "billom": "^1.0.2",

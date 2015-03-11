@@ -6,8 +6,6 @@ logging:
   # Settings for specific loggers
   logger:
     access:
-      # The access log is created from a specialised factory
-      type: 'rapidus-connect-logger'
       # Log events on the access logger does not propagate to the root logger
       propagate: false
       sinks:
