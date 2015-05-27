@@ -16,7 +16,7 @@ logging:
         # Each record is also written in a colourful way to the console
         - type: console
           format:
-            type: 'rapidus-sparkle[createFormatter]'
+            type: 'rapidus-sparkle'
             format: '%{:levelName [:date :time] :requestId %{bold [:levelName]}} :name - :remoteAddress - ":method :url" - :status'
             colors:
               ERROR: red
@@ -37,7 +37,7 @@ logging:
   sinks:
     - type: console
       format:
-        type: 'rapidus-sparkle[createFormatter]'
+        type: 'rapidus-sparkle'
         format: '%{:levelName [:date :time] :requestId %{bold [:levelName]}} :name - :message'
         colors:
           DEBUG: cyan
