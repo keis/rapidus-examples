@@ -9,7 +9,8 @@
   "scripts": {
     "billom": "billom package.json \"$npm_package_name\" > package.html",
     "docs": "docco example.litcoffee",
-    "start": "coffee example.litcoffee"
+    "prestart": "coffee -cb example.litcoffee",
+    "start": "node example.js"
   },
   "dependencies": {
     "coffee-script": "^1.9.1",
