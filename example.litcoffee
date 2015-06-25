@@ -29,8 +29,8 @@ the request being processed. This function needs to be exported because it will 
 loaded by `rapidus-configure` from a directive in the configuration.
 
     module.exports.requestId = (config) ->
-        (record) ->
-            record.requestId = continuationId.get()
+      (record) ->
+        record.requestId = continuationId.get()
 
 ## Configure
 
@@ -48,34 +48,34 @@ asynchronous work while logging some dummy messages.
 
 
     worker = ->
-        logger.info 'hello from worker', process.pid
+      logger.info 'hello from worker', process.pid
 
-        app.use continuationId.assign
-        app.use accessLog 'access'
+      app.use continuationId.assign
+      app.use accessLog 'access'
 
-        app.get '/test', (req, res, next) ->
-            logger.info 'processing request'
-            setTimeout (->
-                logger.info 'request processed'
-                res
-                    .status 200
-                    .send 'zoidberg'
-            ), 100
+      app.get '/test', (req, res, next) ->
+        logger.info 'processing request'
+        setTimeout (->
+          logger.info 'request processed'
+          res
+            .status 200
+            .send 'zoidberg'
+        ), 100
 
-        app.listen 4000
+      app.listen 4000
 
 ## Master function
 
 The master function takes care of spawning the workers of the cluster.
 
     master = ->
-        logger = logging.getLogger 'master'
+      logger = logging.getLogger 'master'
 
-        i = 4
-        cluster.fork() while i-=1
+      i = 4
+      cluster.fork() while i-=1
 
-        cluster.on 'exit', (worker) ->
-            logger.info '%s has left the building', worker.process.pid
+      cluster.on 'exit', (worker) ->
+        logger.info '%s has left the building', worker.process.pid
 
 ## Start it
 
