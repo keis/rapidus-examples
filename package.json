@@ -18,9 +18,9 @@
     "connect-continuation-id": "^0.2.0",
     "express": "^4.12.2",
     "js-yaml": "^3.1.0",
-    "rapidus": "^0.4.0",
-    "rapidus-configure": "^1.1.0",
-    "rapidus-connect-logger": "^1.0.0",
+    "rapidus": "^0.4.3",
+    "rapidus-configure": "^1.2.0",
+    "rapidus-connect-logger": "^2.0.0",
     "rapidus-sparkle": "^1.0.1"
   },
   "devDependencies": {
